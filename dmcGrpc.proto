@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.helloworld";
+option java_outer_classname = "helloWorldProto";
+
+package gserver;
+
+// The greeting service definition
+service dmcRouteGuide {
+    rpc InstallAndUnstall(ScoreQuery) returns (stream DmcScores) {}
+}
+
+//The request message containing the user's name.
+message ScoreQuery {
+    string name = 1;
+}
+
+//The response message containing the greeting
+message DmcScores {
+    string loginName = 1;
+	int32 totalScore = 2;
+	string scoreDate = 3;
+	repeated string detailScore = 4;
+}

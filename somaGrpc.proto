@@ -1,0 +1,41 @@
+syntax = "proto3";
+package gserver;
+
+service SomaRouteGuide {
+    // rpc GetFeature(Point) returns (HelloReply) {}
+    // rpc GetEngWorkRecords(Days) returns (stream Records) {}
+    rpc AnalyticsUserInfoHandler(UserQuery) returns (UserInfo) {}
+}
+//分配标识——tag
+// message Records{
+//   int64 time = 1;
+//   int64 bssid = 2;
+//   string devSn = 3;
+//   string user = 4;
+// }
+
+message UserQuery {
+  string name = 1;
+}
+
+message UserInfo {
+  string loginName = 1;
+  string userName = 2;
+  string orgName = 3;
+  string bureauName = 4;
+  string StationName = 5;
+  string ShopName = 6;
+}
+
+// message Days{
+//   int32 number = 1;
+// }
+
+// message Point {
+//   int32 latitude = 1;
+//   int32 longitude = 2;
+// }
+
+// message HelloReply {
+//   string message = 1;
+// }
